@@ -1,0 +1,12 @@
+footer {
+  background: #252525;
+  color: #aaaaaa;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h4 {
+  margin: 0;
+}
