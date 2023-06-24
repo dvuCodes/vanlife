@@ -1,23 +1,17 @@
-import React, { useState, useEffect } from "react"
+import React, { useContext } from "react"
+import { Context } from "../Context/context"
 import VanCard from "../components/VanCard"
-import { render } from "react-dom"
 
 const VansList = () => {
-  const [vans, setVans] = useState([])
+  const { vans } = useContext(Context)
 
-  const fetchVanData = async () => {
-    try {
-      const res = await fetch("/api/vans")
-      const data = await res.json()
-      setVans(data.vans)
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
-  useEffect(() => {
-    fetchVanData()
-  }, [])
+  // map over van types to render filter buttons
+  const getVanTypes = [...new Set(vans.map((van) => van.type))]
+  const renderFilterBtns = getVanTypes.map((type) => (
+    <button className="filter-btn" key={type}>
+      {type}
+    </button>
+  ))
 
   // map over vans to render them into van cards
   const renderVanCard = vans.map((van) => {
@@ -26,11 +20,12 @@ const VansList = () => {
 
   return (
     <>
-      <div className="filter-container">
-        <button className="filter-btn">orange</button>
-        <button className="filter-btn">orange</button>
-        <button className="filter-btn">orange</button>
-        <p>Clear All Filters</p>
+      <div className="van-page-upper">
+        <h1>Explore our van options</h1>
+        <div className="filter-container">
+          {renderFilterBtns}
+          <p>Clear Filter</p>
+        </div>
       </div>
       <section className="vans-list-container">{renderVanCard}</section>
     </>

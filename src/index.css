@@ -15,6 +15,7 @@ body {
 /* Typography */
 
 h1,
+h3,
 p {
   margin: 0;
 }
@@ -110,15 +111,19 @@ article > p {
 
 /* Van's page styles */
 
-.filter-container,
-.vans-list-container {
+.vans-list-container,
+.van-page-upper {
   padding: 0.8em 1em;
+}
+
+.van-page-upper > h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.625em;
 }
 
 .filter-container {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  gap: 15px;
   align-items: center;
 }
 
@@ -140,9 +145,41 @@ article > p {
 
 .vans-list-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   width: 100%;
   gap: 1.25em;
+}
+
+/* Van details page */
+
+.van-detail-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 2.2em;
+}
+
+.van-detail-page > img {
+  border-radius: 5px;
+}
+
+.rent-van-btn {
+  background: #ff8c38;
+  height: 50px;
+}
+
+.back-to-vans-link {
+  display: flex;
+  gap: 5px;
+}
+
+.back-to-vans-link > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.back-to-vans-link > a:hover {
+  text-decoration: underline;
 }
 
 /* utility */

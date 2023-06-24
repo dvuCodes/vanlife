@@ -4,6 +4,7 @@ import About from "./pages/About"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import VansList from "./pages/VansList"
+import VanDetails from "./pages/VanDetails"
 import "./server"
 
 function App() {
@@ -12,8 +13,9 @@ function App() {
       <Header />
       <Routes>
         <Route path="*" element={<Home />}></Route>
-        <Route path="/About" element={<About />}></Route>
-        <Route path="/Vans" element={<VansList />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/vans" element={<VansList />}></Route>
+        <Route path="/vans/:vanId" element={<VanDetails />}></Route>
       </Routes>
       <Footer />
     </>
