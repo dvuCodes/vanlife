@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Inter", sans-serif;
+  background: #fff7ed;
   min-height: 100vh;
 }
 
@@ -60,7 +61,6 @@ button:hover {
   display: flex;
   flex-direction: column;
   height: 80vh;
-  background: #fff7ed;
 }
 
 article {
@@ -106,4 +106,47 @@ article > p {
   border-radius: 10px;
   width: 200px;
   height: 45px;
+}
+
+/* Van's page styles */
+
+.filter-container,
+.vans-list-container {
+  padding: 0.8em 1em;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.filter-btn {
+  background-color: #ffead0;
+  color: #4d4d4d;
+  width: 100%;
+  max-width: 100px;
+  height: 2em;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-container > p {
+  border-bottom: 1px solid black;
+}
+
+.vans-list-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  gap: 1.25em;
+}
+
+/* utility */
+
+.lower-font {
+  font-size: 0.6rem;
 }

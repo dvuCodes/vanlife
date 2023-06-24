@@ -12,7 +12,6 @@ const Home = () => {
         </p>
         <button className="find-van-btn">Find your van</button>
       </main>
-      <Footer />
     </>
   )
 }
