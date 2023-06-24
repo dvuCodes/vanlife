@@ -8,7 +8,7 @@ const VanDetails = () => {
   const params = useParams()
 
   const getSelectedVan = vans.find((van) => van.id === params.vanId)
-  console.log(getSelectedVan.type)
+
   let typeColor = ""
   if (getSelectedVan.type === "luxury") {
     typeColor = "#161616"
