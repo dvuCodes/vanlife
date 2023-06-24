@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
-import { Context } from "../Context/context"
+import { Context } from "../Context/Context"
 
 const VanDetails = () => {
   const { vans } = useContext(Context)
