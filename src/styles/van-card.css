@@ -37,4 +37,17 @@
   color: #ffead0;
   text-transform: capitalize;
   margin-top: auto;
+  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.van-type.simple {
+  background-color: #e17654;
+}
+
+.van-type.rugged {
+  background-color: #115e59;
+}
+
+.van-type.luxury {
+  background-color: #161616;
 }

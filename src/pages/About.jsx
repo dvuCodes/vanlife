@@ -1,10 +1,12 @@
 import React from "react"
+import splash from "../assets/about-splash.jpg"
 
 const About = () => {
   return (
     <>
       <section className="about-container">
-        <div className="splash-container"></div>
+        {/* <div className="splash-container"></div> */}
+        <img className="splash-container" src={splash} />
         <article>
           <h1>Don’t squeeze in a sedan when you could relax in a van.</h1>
           <p>

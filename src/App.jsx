@@ -1,23 +1,32 @@
 import Home from "./pages/Home"
 import { Routes, Route } from "react-router-dom"
 import About from "./pages/About"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
-import VansList from "./pages/VansList"
-import VanDetails from "./pages/VanDetails"
+import Layout from "./components/Layout"
+import HostLayout from "./components/HostLayout"
+import VansList from "./pages/Vans/VansList"
+import VanDetails from "./pages/Vans/VanDetails"
+import Dashboard from "./pages/Host/Dashboard"
+import Income from "./pages/Host/Income"
+import Reviews from "./pages/Host/Reviews"
+
 import "./server"
 
 function App() {
   return (
     <>
-      <Header />
       <Routes>
-        <Route path="*" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/vans" element={<VansList />}></Route>
-        <Route path="/vans/:vanId" element={<VanDetails />}></Route>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />}></Route>
+          <Route path="about" element={<About />}></Route>
+          <Route path="vans" element={<VansList />}></Route>
+          <Route path="vans/:vanId" element={<VanDetails />}></Route>
+          <Route path="host" element={<HostLayout />}>
+            <Route index element={<Dashboard />}></Route>
+            <Route path="income" element={<Income />}></Route>
+            <Route path="reviews" element={<Reviews />}></Route>
+          </Route>
+        </Route>
       </Routes>
-      <Footer />
     </>
   )
 }

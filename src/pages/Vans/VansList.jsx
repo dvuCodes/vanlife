@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
-import { Context } from "../Context/Context"
-import VanCard from "../components/VanCard"
+import { Context } from "../../Context/Context"
+import VanCard from "../../components/VanCard"
 
 const VansList = () => {
   const { vans } = useContext(Context)

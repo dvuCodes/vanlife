@@ -1,22 +1,18 @@
 import React from "react"
 import "../styles/header.css"
-import { Link, Route, Routes } from "react-router-dom"
-import About from "../pages/About"
+import { Link } from "react-router-dom"
 
 const Header = () => {
   return (
     <header>
-      <h1 className="header-title">#VANLIFE</h1>
-      <nav>
-        <Link className="nav-items" to="/">
-          Home
-        </Link>
-        <Link className="nav-items" to="/about">
-          About
-        </Link>
-        <Link to="/vans" className="nav-items">
-          Vans
-        </Link>
+      <Link to="/">
+        <h1 className="header-title">#VANLIFE</h1>
+      </Link>
+
+      <nav className="header-nav">
+        <Link to="/host">Host</Link>
+        <Link to="/about">About</Link>
+        <Link to="/vans">Vans</Link>
       </nav>
     </header>
   )

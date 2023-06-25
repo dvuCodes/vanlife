@@ -4,14 +4,6 @@ import "../styles/van-card.css"
 
 const VanCard = ({ imageUrl, name, price, type, id }) => {
   // conditional styling for the van type buttons
-  let typeColor = ""
-  if (type === "luxury") {
-    typeColor = "#161616"
-  } else if (type === "rugged") {
-    typeColor = "#115E59"
-  } else if (type === "simple") {
-    typeColor = "#E17654"
-  }
 
   return (
     <>
@@ -25,9 +17,7 @@ const VanCard = ({ imageUrl, name, price, type, id }) => {
           <span className="van-price">${price}</span>
           <span className="lower-font">/day</span>
         </h3>
-        <div className="van-type" style={{ backgroundColor: typeColor }}>
-          {type}
-        </div>
+        <div className={`van-type ${type}`}>{type}</div>
       </div>
     </>
   )

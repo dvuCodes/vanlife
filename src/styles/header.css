@@ -7,20 +7,3 @@ header {
   height: 10vh;
   text-align: center;
 }
-
-nav {
-  display: flex;
-  gap: 10px;
-  list-style: none;
-}
-
-.nav-items:hover {
-  border-bottom: 2px solid black;
-}
-
-.nav-items {
-  text-decoration: none;
-  color: black;
-  font-weight: 400;
-  font-size: 0.9rem;
-}
