@@ -33,6 +33,7 @@ a {
 /* Typography */
 
 h1,
+h2,
 h3,
 p {
   margin: 0;
@@ -54,6 +55,11 @@ main h1 {
 .header-nav a {
   color: #161616;
   padding: 0.3125em;
+}
+
+.my-vans-nav a {
+  color: #161616;
+  padding-right: 0.3125em;
 }
 
 .host-nav a:hover,
@@ -260,8 +266,47 @@ article p {
   color: black;
 }
 
+.my-vans-detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.my-vans-detail-header {
+  display: grid;
+  column-gap: 0.8em;
+  grid-template-columns: 40% auto;
+  grid-template-rows: auto auto auto auto;
+}
+
+.my-vans-detail-header img {
+  width: 100%;
+  grid-row: 1 / span 4;
+  border-radius: 5px;
+}
+
+.my-vans-detail-header h2 {
+  grid-row: 2;
+}
+.my-vans-detail-header p {
+  grid-row: 3;
+}
+
+.my-vans-detail-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1em;
+}
+
 /* utility */
 
 .lower-font {
   font-size: 0.6rem;
+}
+
+.bold {
+  font-weight: 600;
 }

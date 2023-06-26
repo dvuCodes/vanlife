@@ -6,7 +6,9 @@ const HostVans = () => {
   const { vans } = useContext(Context)
 
   const getHostVans = vans.filter((van) => van.hostId === "123")
-  const renderHostVans = getHostVans.map((van) => <HostVanCard {...van} />)
+  const renderHostVans = getHostVans.map((van) => (
+    <HostVanCard {...van} key={`${van.hostId}-${van.id}`} />
+  ))
 
   return <div className="host-van-list-wrapper">{renderHostVans}</div>
 }
