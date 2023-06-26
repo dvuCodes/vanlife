@@ -3,8 +3,6 @@ import { Link } from "react-router-dom"
 import "../styles/van-card.css"
 
 const VanCard = ({ imageUrl, name, price, type, id }) => {
-  // conditional styling for the van type buttons
-
   return (
     <>
       <div className="van-card-container">
