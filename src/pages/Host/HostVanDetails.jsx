@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { useParams, NavLink } from "react-router-dom"
+import { useParams, NavLink, Link, Outlet } from "react-router-dom"
 import { Context } from "../../Context/Context"
 
 const HostVanDetails = () => {
@@ -13,43 +13,43 @@ const HostVanDetails = () => {
   }
 
   return (
-    <div className="my-vans-detail-wrapper">
-      <div className="my-vans-detail-header">
-        <img src={getSelectedVan.imageUrl} />
-        <h2>{getSelectedVan.name}</h2>
-        <p>${getSelectedVan.price}/day</p>
+    <div className="my-vans-page-wrapper">
+      <div className="back-to-vans-link">
+        <p>←</p>
+        <Link to=".." relative="path">
+          Back to all vans
+        </Link>
       </div>
-      <div className="my-vans-detail-main">
-        <nav className="my-vans-nav">
-          <NavLink
-            className={({ isActive }) => (isActive ? "active-link" : null)}
-          >
-            Details
-          </NavLink>
-          <NavLink
-            className={({ isActive }) => (isActive ? "active-link" : null)}
-          >
-            Pricing
-          </NavLink>
-          <NavLink
-            className={({ isActive }) => (isActive ? "active-link" : null)}
-          >
-            Photos
-          </NavLink>
-        </nav>
-        <p>
-          <span className="bold"> Name:</span> {getSelectedVan.name}
-        </p>
-        <p>
-          <span className="bold"> Category:</span> {getSelectedVan.type}
-        </p>
-        <p>
-          <span className="bold"> Description:</span>{" "}
-          {getSelectedVan.description}
-        </p>
-        <p>
-          <span className="bold"> Visibility:</span> Public
-        </p>
+      <div className="my-vans-detail-wrapper">
+        <div className="my-vans-detail-header">
+          <img src={getSelectedVan.imageUrl} />
+          <h2>{getSelectedVan.name}</h2>
+          <p>${getSelectedVan.price}/day</p>
+        </div>
+        <div className="my-vans-detail-main">
+          <nav className="my-vans-nav">
+            <NavLink
+              to="."
+              end
+              className={({ isActive }) => (isActive ? "active-link" : null)}
+            >
+              Details
+            </NavLink>
+            <NavLink
+              to="pricing"
+              className={({ isActive }) => (isActive ? "active-link" : null)}
+            >
+              Pricing
+            </NavLink>
+            <NavLink
+              to="photos"
+              className={({ isActive }) => (isActive ? "active-link" : null)}
+            >
+              Photos
+            </NavLink>
+          </nav>
+          <Outlet />
+        </div>
       </div>
     </div>
   )

@@ -17,9 +17,10 @@ const VanDetails = () => {
       <article className="van-detail-page">
         <div className="back-to-vans-link">
           <p>←</p>
-          <Link to="/vans">Back to all vans</Link>
+          <Link to=".." relative="path">
+            Back to all vans
+          </Link>
         </div>
-
         <img src={getSelectedVan.imageUrl} />
         <div className={`van-type ${getSelectedVan.type}`}>
           {getSelectedVan.type}

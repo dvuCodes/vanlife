@@ -6,6 +6,8 @@ const Context = React.createContext()
 const ContextProvider = ({ children }) => {
   const [vans, setVans] = useState([])
 
+  const findVan = (id) => vans.find((van) => van.id === id)
+
   const fetchVanData = async () => {
     try {
       const res = await fetch("/api/vans")
@@ -20,7 +22,9 @@ const ContextProvider = ({ children }) => {
     fetchVanData()
   }, [])
 
-  return <Context.Provider value={{ vans }}>{children}</Context.Provider>
+  return (
+    <Context.Provider value={{ vans, findVan }}>{children}</Context.Provider>
+  )
 }
 
 export { ContextProvider, Context }
