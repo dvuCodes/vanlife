@@ -6,9 +6,9 @@ const HostVanDetails = () => {
   const { vans } = useContext(Context)
   const params = useParams()
 
-  const getSelectedVan = vans.find((van) => van.id === params.vanId)
+  const selectedVan = vans.find((van) => van.id === params.vanId)
 
-  if (!getSelectedVan) {
+  if (!selectedVan) {
     return `Loading..`
   }
 
@@ -22,9 +22,9 @@ const HostVanDetails = () => {
       </div>
       <div className="my-vans-detail-wrapper">
         <div className="my-vans-detail-header">
-          <img src={getSelectedVan.imageUrl} />
-          <h2>{getSelectedVan.name}</h2>
-          <p>${getSelectedVan.price}/day</p>
+          <img src={selectedVan.imageUrl} />
+          <h2>{selectedVan.name}</h2>
+          <p>${selectedVan.price}/day</p>
         </div>
         <div className="my-vans-detail-main">
           <nav className="my-vans-nav">
@@ -48,7 +48,7 @@ const HostVanDetails = () => {
               Photos
             </NavLink>
           </nav>
-          <Outlet />
+          <Outlet context={{ selectedVan }} />
         </div>
       </div>
     </div>

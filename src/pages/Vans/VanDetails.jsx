@@ -6,9 +6,9 @@ const VanDetails = () => {
   const { vans } = useContext(Context)
   const params = useParams()
 
-  const getSelectedVan = vans.find((van) => van.id === params.vanId)
+  const selectedVan = vans.find((van) => van.id === params.vanId)
 
-  if (!getSelectedVan) {
+  if (!selectedVan) {
     return <div>Loading...</div>
   }
 
@@ -21,13 +21,11 @@ const VanDetails = () => {
             Back to all vans
           </Link>
         </div>
-        <img src={getSelectedVan.imageUrl} />
-        <div className={`van-type ${getSelectedVan.type}`}>
-          {getSelectedVan.type}
-        </div>
-        <h1 className="van-name">{getSelectedVan.name}</h1>
-        <h3 className="van-info">${getSelectedVan.price}/day</h3>
-        <p>{getSelectedVan.description}</p>
+        <img src={selectedVan.imageUrl} />
+        <div className={`van-type ${selectedVan.type}`}>{selectedVan.type}</div>
+        <h1 className="van-name">{selectedVan.name}</h1>
+        <h3 className="van-info">${selectedVan.price}/day</h3>
+        <p>{selectedVan.description}</p>
         <button className="rent-van-btn">Rent this van</button>
       </article>
     </>

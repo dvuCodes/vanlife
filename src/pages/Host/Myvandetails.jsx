@@ -1,24 +1,21 @@
-import React, { useContext } from "react"
-import { Context } from "../../Context/Context"
-import { useParams } from "react-router-dom"
+import React from "react"
+
+import { useOutletContext } from "react-router-dom"
 
 const myvandetails = () => {
-  const { findVan } = useContext(Context)
-  const { vanId } = useParams()
-
-  const thisVan = findVan(vanId)
+  const { selectedVan } = useOutletContext()
 
   return (
     <div className="my-van-details-wrapper">
       <p>
-        <span className="bold"> Name:</span> {thisVan.name}
+        <span className="bold"> Name:</span> {selectedVan.name}
       </p>
       <p>
-        <span className="bold"> Category: </span> {thisVan.type}
+        <span className="bold"> Category: </span> {selectedVan.type}
       </p>
       <p>
         <span className="bold"> Description: </span>
-        {thisVan.description}
+        {selectedVan.description}
       </p>
       <p>
         <span className="bold"> Visibility:</span> Public
