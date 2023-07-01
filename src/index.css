@@ -216,6 +216,10 @@ article p {
   gap: 1.25em;
 }
 
+.active-btn {
+  background-color: black;
+}
+
 /* Van details page */
 
 .van-detail-page {
