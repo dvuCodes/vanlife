@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { Context } from "../../Context/Context"
 import VanCard from "../../components/VanCard"
-import { useSearchParams, Link } from "react-router-dom"
+import { useSearchParams } from "react-router-dom"
 
 const VansList = () => {
   const { vans } = useContext(Context)
@@ -30,15 +30,18 @@ const VansList = () => {
     return <VanCard key={van.id} {...van} />
   })
 
+  const clearBtn = vanType ? (
+    <button className="clear-btn" onClick={() => setSearchParams("?type=")}>
+      Clear Filter
+    </button>
+  ) : null
+
   return (
     <>
       <div className="van-page-upper">
         <h1>Explore our van options</h1>
         <div className="filter-container">
-          {renderFilterBtns}
-          <Link to={`?type=`}>
-            <p>Clear Filter</p>
-          </Link>
+          {renderFilterBtns} {clearBtn}
         </div>
       </div>
       <section className="vans-list-container">{renderVanCard}</section>

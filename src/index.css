@@ -211,13 +211,20 @@ article p {
 
 .vans-list-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   width: 100%;
   gap: 1.25em;
 }
 
-.active-btn {
-  background-color: black;
+.clear-btn {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+.clear-btn:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 
 /* Van details page */
